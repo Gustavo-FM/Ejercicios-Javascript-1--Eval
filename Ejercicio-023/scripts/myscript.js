@@ -28,17 +28,41 @@ function comprobarDecimales(msg) {
   let num1
     do{
         num1=parseFloat(prompt(msg))
-    } while(!Number.isFloat(num1)|| num1>0)
+        console.log(typeof num1)
+    } while(isNaN(num1)||num1<1)
     return num1
+}
+
+function comprobarEntero(msg){
+  let numEntero
+  do{
+    numEntero = parseFloat(prompt(msg))
+    
+    //numEntero=parseFloat(numEntero)
+  } while((!Number.isInteger(numEntero))||numEntero<0)
+  return numEntero
 }
 
 let peso
 let estatura
+let edad
 let IMC=22.0
 let EDAD=45
+let bajo ="bajo"
+let medio="medio"
+let alto="alto"
+let salida=""
 
 peso=comprobarDecimales("Dime cual es tu peso en kg")
-estatura=comprobarDecimales("Dime cual es tu estara en metros")
+estatura=comprobarDecimales("Dime cual es tu estatura en metros")
+edad=comprobarEntero("Dime tu edad,debe serun nº entero ")
 
-let indiceMasaCorporal= (peso/Math.pow(estatura,2))
-if(indiceMasaCorporal<IMC )
+let imc= (peso/Math.pow(estatura,2))
+if(imc<IMC){
+  salida = (edad<EDAD)?bajo:medio
+}else {
+  salida = (edad<EDAD)?medio:alto
+}
+
+document.write(`Tu índice de masa corporal es ${imc}. Tienes un riesgo ${salida} de enfermedad coronaria`)
+console.log(`Tu índice de masa corporal es ${imc}. Tienes un riesgo ${salida} de enfermedad coronaria`)
