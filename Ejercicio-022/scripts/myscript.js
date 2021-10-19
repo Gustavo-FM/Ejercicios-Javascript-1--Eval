@@ -20,6 +20,7 @@ function meterNumero(msg) {
     return num1       
 }
 
+
 alert("Te voy a decir cual numero de tres es el mayor")
 let num1=meterNumero("Dame el primer numero")
 let num2=meterNumero("Dame el segundo numero")

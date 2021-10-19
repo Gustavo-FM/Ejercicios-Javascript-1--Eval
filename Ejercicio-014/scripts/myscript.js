@@ -62,7 +62,7 @@ do {
 
 */
 
-let salida="<table border>" // border es para quedibuje el borde
+let salida="<table border>" // border es para que dibuje el borde
 
 for(let i=1;i<=filas; i++){
     salida+="<tr>"
