@@ -10,7 +10,8 @@
 *
 *
 ***************************************************************************************************************/
-
+//esta funcion falla dice que no es un numero. Voy a probar con la funcion siguiete
+/*
 function meterNumero(msg) {
     let num1
     do{
@@ -19,6 +20,18 @@ function meterNumero(msg) {
     }while(!Number.isFloat(num1)) 
     return num1       
 }
+*/
+
+function verificarEntero(i){
+    let numeroEntero
+    do{
+        numeroEntero=prompt(`Dame un numero entero ${i} `)
+        numeroEntero=parseFloat(numeroEntero)
+    }while(!Number.isInteger(numeroEntero)||numeroEntero<1)
+
+    return numeroEntero
+}
+
 
 
 alert("Te voy a decir cual numero de tres es el mayor")
