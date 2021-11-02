@@ -15,3 +15,14 @@
 *
 *
 ***************************************************************************************************************/
+
+
+
+
+/*//date llamar a julian*/
+let fecha
+do{
+    fecha=prompt("Dame tu fecha de nacimiento (dd-mm-aaaa")
+}while(isNaN(fecha)==false)
+
+document.write(fecha)

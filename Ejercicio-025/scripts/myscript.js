@@ -10,3 +10,52 @@
 *
 *
 ***************************************************************************************************************/
+
+function pedirFloat(msg) {
+    let num;
+    do {
+            num=parseFloat(prompt(msg))
+    } while (isNaN(num))
+    return parseFloat(num)
+}
+
+function calMax(n){
+    if(n>max)  
+       max=n
+}
+
+let numeros=[]
+let n=pedirFloat("Dame un numero")
+//let max=n
+numeros.push(n)
+//alert("Te voy a pedir numeros hasta que ingreses el 0. Luego te daré el mayor de todos los que has introducido")
+//let contador=0
+while(n!=0) {
+    n=pedirFloat("Dame un numero")
+    numeros.push(n)
+    //calMax(n)
+    //contador++
+}
+numeros.pop()
+/*
+max=numeros.reduce(
+    function mayor(anterior,actual) {
+        return  anterior>actual?anterior:actual
+    }
+)
+
+/*
+//Funcion anonima
+max=numeros.reduce(
+    function (anterior,actual) {
+        return  anterior>actual?anterior:actual
+    }
+)
+*/
+
+
+//Funcion arrow function
+max=numeros.reduce((anterior,actual) => anterior>actual?anterior:actual)
+
+
+console.log(`El mayor de ${numeros.join(",")} es ${max}`)
